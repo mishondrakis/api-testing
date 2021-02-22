@@ -3,8 +3,9 @@ import json
 
 BASE_Url = "https://reqres.in"
 
-response = requests.get(BASE_Url + "/api/users?page=2")
 
-print(response)
-print(response.json())
-print(json.dumps(response.json(), indent=4))
+
+
+responseOne = requests.get(BASE_Url + "/api/users/2")
+
+print(json.dumps(responseOne.json(), indent=4))
