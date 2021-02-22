@@ -7,6 +7,9 @@ params = {'page': 2}
 
 responseOne = requests.get(BASE_Url + "/api/users", params=params)
 
-print(json.dumps(responseOne.json(), indent=4))
+# print(json.dumps(responseOne.json(), indent=4))
 resp = responseOne.json()
-import ipdb; ipdb.set_trace()
+#  import ipdb; ipdb.set_trace()
+
+first_names = [d['first_name'] for d in resp["data"]]
+print(first_names)
