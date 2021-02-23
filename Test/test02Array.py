@@ -5,13 +5,13 @@ class Test2(unittest.TestCase):
 
     @pytest.mark.run(order=1)
     def testa(self):
-        pass
+        assert False
     @pytest.mark.run(order=2)
     def testB(self):
         pass
-    @pytest.mark.run(order=4)
+    @pytest.mark.dependency(depend = ['Test::testa'])
     def testC(self):
         pass
     @pytest.mark.run(order=3)
     def testD(self):
-        pass
+        assert False
